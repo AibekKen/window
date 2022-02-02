@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 @mixin flexbox() {
    display: -webkit-box;
@@ -32,6 +32,10 @@ $minwidth: 320px;
 
 @import "_header.scss";
 
+a {
+   cursor: pointer;
+}
+
 .ibg {
    background-position: center;
    background-size: cover;
@@ -58,4 +62,137 @@ $minwidth: 320px;
    max-width: 1230px;
    padding: 0px 15px;
    margin: 0 auto;
+}
+
+.main-screen {
+   height: 100vh;
+   padding: 140px 0;
+   background: linear-gradient(
+      180deg,
+      #80e9f0 0%,
+      rgba(154, 194, 224, 0.625) 46.88%,
+      rgba(196, 196, 196, 0) 100%,
+      rgba(145, 170, 206, 0) 100%
+   );
+
+   &__body {
+      @include flexbox();
+      justify-content: space-between;
+   }
+
+   &__offer {
+   }
+
+   &__image {
+      flex: 0 0 44.5%;
+      padding: 0 0 47.25% 0;
+      filter: drop-shadow(1px 1px 75px rgba(255, 210, 94, 0.65));
+   }
+}
+.container {
+}
+.offer {
+   max-width: 358px;
+
+   &__title {
+      font-size: 2.5em;
+      line-height: 1.2em;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+   }
+
+   &__text {
+      font-size: 1.5em;
+      line-height: 1.2em;
+      margin: 0 0 36px 0;
+   }
+
+   &__list {
+      padding: 0 0 0 20px;
+   }
+
+   &__list li {
+      position: relative;
+   }
+
+   &__list li::before {
+      content: "";
+      position: absolute;
+      justify-content: center;
+      left: -15px;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      background-color: black;
+      border-radius: 50%;
+   }
+
+   &__button {
+      position: relative;
+      display: block;
+      text-align: center;
+      width: 225px;
+      height: 70px;
+      background: linear-gradient(
+         274.36deg,
+         #ffef5e 0%,
+         rgba(255, 229, 112, 0.810938) 58.07%,
+         rgba(254, 203, 157, 0.34) 98.67%
+      );
+
+      transition: all 0.5s ease;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 50px;
+      font-size: 1.5em;
+      line-height: 69px;
+      font-weight: 700;
+      color: #000;
+      overflow: hidden;
+   }
+
+   &__button:hover {
+      background: linear-gradient(
+         274.36deg,
+         #cc5eff 0%,
+         rgba(162, 112, 255, 0.811) 58.07%,
+         rgba(254, 203, 157, 0.34) 98.67%
+      );
+   }
+   &__button:focus {
+      outline: none;
+   }
+}
+
+.offer__button .circle {
+   position: absolute;
+   background-color: #fff;
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   transform: translate(-50%, -50%) scale(0);
+   animation: scale 0.5s ease-out;
+}
+
+.offer__button:focus {
+   outline: none;
+}
+
+@keyframes scale {
+   to {
+      transform: translate(-50%, -50%) scale(3);
+      opacity: 0;
+   }
+}
+
+@media (orientation: portrait) {
+   .main-screen {
+      max-height: 800px;
+   }
+}
+
+@media (min-width: 1600px) {
+   .main-screen {
+      max-height: 900px;
+   }
 }
