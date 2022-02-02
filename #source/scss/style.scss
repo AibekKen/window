@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 @mixin flexbox() {
    display: -webkit-box;
    display: -moz-box;
@@ -22,7 +24,7 @@
    order: $val;
 }
 
-$fontfamily: "Lato";
+$fontfamily: "Montserrat";
 
 $minwidth: 320px;
 
