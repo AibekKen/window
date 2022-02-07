@@ -22,6 +22,9 @@ html {
 
    &__menu {
       flex: 0 0 27.5%;
+      @media (max-width: 1130px) {
+         flex: 0 0 33%;
+      }
    }
 
    &__whatsapp {
@@ -36,10 +39,17 @@ html {
    &__logo {
       width: 100px;
       height: 56px;
+      @media (max-width: 980px) {
+         width: 75px;
+         height: 42px;
+      }
    }
 
    &__name {
       font-size: 2.14em;
+      @media (max-width: 980px) {
+         font-size: 1.8em;
+      }
    }
 }
 .menu {
@@ -53,6 +63,9 @@ html {
       font-size: 1.2em;
       color: #000000;
       transition: all 0.3s ease;
+      @media (max-width: 980px){
+         font-size: 1em;
+      }
    }
 
    &__link::after {
@@ -81,6 +94,10 @@ html {
       width: 56px;
       height: 56px;
       transition: all 0.3s ease;
+      @media (max-width: 980px) {
+         width: 42px;
+         height: 42px;
+      }
    }
    &__logo:hover {
       transform: scale(1.2);
@@ -90,6 +107,9 @@ html {
       font-size: 1.5em;
       font-weight: 700;
       color: black;
+      @media (max-width: 980px) {
+         font-size: 1.3em;
+      }
    }
 }
 
