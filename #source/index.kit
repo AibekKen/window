@@ -38,7 +38,7 @@
                            <li>Подаконники</li>
                         </ul>
                      </div>
-                     <a href="#" class="offer__button">Сделать заказ</a>
+                     <a href="#steps" class="offer__button">Сделать заказ</a>
                   </div>
                   <div class="main-screen__image ibg">
                      <img src="../img/Window.png" alt="">
@@ -47,7 +47,7 @@
             </div>
          </section>
          <div class="content">
-            <section class="product">
+            <section id='prodacts' class="product">
                <div class="container">
                   <h2 class="product__title section-title">
                      Наша продукция
@@ -132,7 +132,7 @@
                </div>
             </section>
 
-            <section class="contacts">
+            <section id="steps" class="contacts">
                <div class="container">
                   <h2 class="contacts__title section-title">
                      Сделать заказ
@@ -144,16 +144,19 @@
                            <div class="steps__number steps__number_1">1</div> <span>Связаться с нами</span>
                         </div>
                         <div class="steps__body steps__body_1">
-                           <a href="" class="steps__social-link social-link">
+                           <a href="https://wa.me/message/73IDIBQ5UUIOD1" target="_blank"
+                              class="steps__social-link social-link">
                               <div class="social-link__logo ibg"><img src="../img/icons/whatsapp.svg" alt=""></div>
                               <div class="social-link__name text">+7 771 527 14 58</div>
                            </a>
-                           <a href="" class="steps__social-link social-link">
+                           <a href="https://www.instagram.com/okno0811/" target="_blank"
+                              class="steps__social-link social-link">
                               <div class="social-link__logo ibg"><img src="../img/icons/insta.svg" alt=""></div>
                               <div class="social-link__name text">@okno0811</div>
                            </a>
-                           <a href="" class="steps__social-link social-link">
-                              <div class="social-link__logo social-link__logo_3 ibg"><img src="../img/icons/phone.svg" alt=""></div>
+                           <a href="#feedback" class="steps__social-link social-link">
+                              <div class="social-link__logo social-link__logo_3 ibg"><img src="../img/icons/phone.svg"
+                                    alt=""></div>
                               <div class="social-link__name text">Оставить свой номер</div>
                            </a>
                         </div>
@@ -196,6 +199,19 @@
 
 
                   </div>
+                  <div id='feedback' class="contacts__feedback feedback">
+                     <h2 class="feedback__title section-subtitle">Форма для обратной связи</h2>
+                     <form class="feedback__form">
+                        <div class="feedback__form_input">
+                           <input type="text" class="input" placeholder="Введите имя">
+                        </div>
+                        <div class="feedback__form_input">
+                           <input type="tel" class="input" placeholder="Ваш номер телефона">
+                        </div>
+                        <button type="submit" class="feedback__form_btn">Отправить</button>
+                     </form>
+                  </div>
+
 
                </div>
             </section>

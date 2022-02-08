@@ -397,6 +397,7 @@ a {
 }
 
 .steps {
+   margin: 0px 0px 60px 0px;
    &__step {
       &_1 {
       }
@@ -521,4 +522,105 @@ a {
 .text {
 }
 .point {
+}
+
+//================================
+.contacts {
+   &__feedback {
+   }
+}
+.feedback {
+   padding: 0px 0px 160px 0px;
+   &__title {
+      margin: 0px 0px 30px 0px;
+   }
+   &__form {
+      display: flex;
+      gap: 40px;
+
+      &_input {
+         width: 290px;
+         height: 60px;
+      }
+
+      &_input input::placeholder {
+         font-size: 1.5em;
+      }
+
+      &_input input:focus::placeholder {
+         color: transparent;
+      }
+
+      &_btn {
+         width: 200px;
+         height: 60px;
+         background: #dd3ccd;
+         font-weight: bold;
+         font-size: 1.5em;
+         text-align: center;
+         line-height: 60px;
+
+         color: #ffffff;
+      }
+   }
+}
+.input {
+}
+
+.footer {
+   background: rgb(68, 68, 71);
+   padding: 0 20px;
+}
+
+.footer__row {
+   display: flex;
+   height: 80px;
+   align-items: center;
+}
+
+.footer__column {
+   flex: 0 1 33.33%;
+}
+
+.footer__column_2 {
+   display: flex;
+   justify-content: center;
+}
+
+.footer__column_3 {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.footer__title {
+   color: #fff;
+}
+
+.footer__github {
+   display: flex;
+   align-items: center;
+   color: #fff;
+   text-decoration: none;
+}
+
+.logo {
+   width: 100px;
+}
+
+.logo img {
+   width: 100%;
+}
+
+.footer__rsschool {
+}
+.rsschool__logo {
+}
+
+.github__logo {
+   width: 50px;
+   margin: 0 10px 0 0;
+}
+
+.github__logo img {
+   width: 100%;
 }
