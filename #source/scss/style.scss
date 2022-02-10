@@ -387,17 +387,31 @@ a {
       rgba(154, 194, 224, 0.625) 46.88%,
       #80e9f0 100%
    );
+
+   @media (max-width: 768px) {
+      &__body {
+         display: flex;
+         justify-content: space-between;
+         flex-direction: column;
+         align-items: center;
+      }
+   }
    &__title {
    }
 
    &__steps {
       display: flex;
       justify-content: space-between;
+      row-gap: 30px;
    }
 }
 
 .steps {
    margin: 0px 0px 60px 0px;
+   @media (max-width: 980px) {
+      flex-wrap: wrap;
+   }
+
    &__step {
       &_1 {
       }
@@ -525,10 +539,7 @@ a {
 }
 
 //================================
-.contacts {
-   &__feedback {
-   }
-}
+
 .feedback {
    padding: 0px 0px 160px 0px;
    &__title {
@@ -537,6 +548,9 @@ a {
    &__form {
       display: flex;
       gap: 40px;
+      @media (max-width: 980px) {
+         flex-direction: column;
+      }
 
       &_input {
          width: 290px;
