@@ -10,7 +10,6 @@ burger.addEventListener('click', () => {
    menu.classList.toggle('active');
    document.body.classList.toggle('lock');
    block.classList.toggle('block');
-   logo.classList.toggle('inactive')
 })
 
 menuLink.forEach((link, index) => link.addEventListener('click', () => {
@@ -24,7 +23,6 @@ menuLink.forEach((link, index) => link.addEventListener('click', () => {
 
 
 function ibg() {
-
    let ibg = document.querySelectorAll(".ibg");
    for (var i = 0; i < ibg.length; i++) {
       if (ibg[i].querySelector('img')) {
@@ -61,5 +59,10 @@ button.addEventListener('click', function (e) {
 
 
 
+const screenWidth = window.screen.width
 
+if (screenWidth <= 640) {
+   const whatsapp = document.querySelector('.whatsapp')
+   menu.append(whatsapp)
+}
 
