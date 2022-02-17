@@ -75,12 +75,33 @@ submitBtn.addEventListener('click', function (e) {
 })
 
 
-
+//=====================при изменении размеорв
 const headerRow = document.querySelector('.header__row');
 const whatsapp = document.querySelector('.whatsapp');
 const feedback = document.querySelector('.feedback');
 const steps = document.querySelector('.steps');
 const contacts = document.querySelector('.contacts-container')
+
+const screenWidth = window.screen.width;
+if (screenWidth <= 640) {
+   if (!whatsapp.classList.contains("done")) {
+      whatsapp.classList.add('done')
+      menu.appendChild(whatsapp)
+   }
+}
+if (screenWidth > 640) {
+   if (whatsapp.classList.contains("done")) {
+      whatsapp.classList.remove('done')
+      headerRow.insertBefore(whatsapp, burger)
+   }
+}
+if (screenWidth <= 977) {
+   if (!feedback.classList.contains('done')) {
+      steps.append(feedback);
+      feedback.classList.add('done')
+   }
+}
+
 
 window.addEventListener('resize', () => {
    const screenWidth = window.screen.width;
@@ -112,7 +133,7 @@ window.addEventListener('resize', () => {
 });
 
 
-//========
+//========Обработка формы
 
 const feedbackForm = document.forms.feedback;
 const nameInput = feedbackForm.nameInput;
@@ -123,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
    feedbackForm.addEventListener('submit', (e) => {
       e.preventDefault();
       if (nameInput.value !== '' && phoneInput.value !== '') {
-         const urlSendMessage = `https://api.telegram.org/bot5153040242:AAErjR1cQlgPjACBVduFJvVooI_BOyZzimg/sendMessage?chat_id=658673865&text= ${nameInput.value} ${phoneInput.value};`
+         const urlSendMessage = `https://api.telegram.org/bot5153040242:AAErjR1cQlgPjACBVduFJvVooI_BOyZzimg/sendMessage?chat_id=1955156744&text= ${nameInput.value} ${phoneInput.value};`
          fetch(urlSendMessage)
          nameInput.value = '';
          phoneInput.value = ''
