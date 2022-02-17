@@ -50,6 +50,9 @@ html {
       @media (max-width: 980px) {
          font-size: 1.8em;
       }
+      @media (max-width: 700px) {
+         font-size: 1.3em;
+      }
    }
 }
 .menu {
@@ -60,7 +63,7 @@ html {
 
    &__link {
       position: relative;
-      font-size: 1.2em;
+      font-size: var(--fontsize4);
       color: #000000;
       transition: all 0.3s ease;
       @media (max-width: 980px) {
@@ -104,7 +107,7 @@ html {
    }
 
    &__number {
-      font-size: 1.5em;
+      font-size: var(--fontsize3);
       font-weight: 700;
       color: black;
       @media (max-width: 980px) {
@@ -123,19 +126,20 @@ html {
       width: 100%;
       height: 110vh;
       flex-direction: column;
-      top: 0;
+      top: -110vh;
       padding: 50px 20px;
-      right: -100%;
+      right: 0;
       z-index: 3;
       transition: all 0.5s ease;
       overflow-y: auto;
+      border-radius: 5px;
       background: -webkit-linear-gradient(90deg, rgb(130, 247, 221) 75%, rgb(25, 124, 128));
       background: -moz-linear-gradient(90deg, rgb(130, 247, 221) 75%, rgb(25, 124, 128));
       background: linear-gradient(90deg, rgb(130, 247, 221) 75%, rgb(25, 124, 128));
    }
 
    .header__menu.active {
-      right: 0;
+      top: 0;
    }
 
    .menu__list {
@@ -143,7 +147,7 @@ html {
    }
 
    .menu__list li a {
-      font-size: 2em;
+      font-size: var(--fontsize2);
    }
    .menu__list li {
       margin-bottom: 20px;
@@ -171,7 +175,7 @@ html {
    }
 
    .header__burger::before {
-      top: 0px;
+      top: 0.3px;
    }
 
    .header__burger::after {

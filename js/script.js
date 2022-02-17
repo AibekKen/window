@@ -34,8 +34,10 @@ function ibg() {
 ibg();
 
 //===========================================
+'use strict'
 
 const button = document.querySelector('.offer__button')
+const submitBtn = document.querySelector('.feedback__form_btn');
 
 button.addEventListener('click', function (e) {
    const x = e.clientX
@@ -46,23 +48,85 @@ button.addEventListener('click', function (e) {
 
    const xInside = x - buttonLeft
    const yInside = y - buttonTop
-
    const circle = document.createElement('span')
-
    circle.classList.add('circle')
    circle.style.top = yInside + 'px'
    circle.style.left = xInside + 'px'
-
    this.appendChild(circle)
    setTimeout(() => circle.remove(), 500)
+
+})
+
+submitBtn.addEventListener('click', function (e) {
+   if (nameInput.value !== '' && phoneInput.value !== '') {
+      submitBtn.textContent = 'Отправлено'
+      document.querySelectorAll('input').forEach((input) => {
+         input.classList.remove('err')
+      })
+   }
+   else {
+      submitBtn.textContent = 'Введите данные'
+      document.querySelectorAll('input').forEach((input) => {
+         input.classList.add('err')
+      })
+   }
+
+   setTimeout(() => submitBtn.textContent = 'Отправить', 2000)
 })
 
 
 
-const screenWidth = window.screen.width
+const headerRow = document.querySelector('.header__row');
+const whatsapp = document.querySelector('.whatsapp');
+const feedback = document.querySelector('.feedback');
+const steps = document.querySelector('.steps');
+const contacts = document.querySelector('.contacts-container')
 
-if (screenWidth <= 640) {
-   const whatsapp = document.querySelector('.whatsapp')
-   menu.append(whatsapp)
-}
+window.addEventListener('resize', () => {
+   const screenWidth = window.screen.width;
+   if (screenWidth <= 640) {
+      if (!whatsapp.classList.contains("done")) {
+         whatsapp.classList.add('done')
+         menu.appendChild(whatsapp)
+      }
+   }
+   if (screenWidth > 640) {
+      if (whatsapp.classList.contains("done")) {
+         whatsapp.classList.remove('done')
+         headerRow.insertBefore(whatsapp, burger)
+      }
+   }
+   if (screenWidth <= 977) {
+      if (!feedback.classList.contains('done')) {
+         steps.append(feedback);
+         feedback.classList.add('done')
+      }
+   }
 
+   if (screenWidth > 977) {
+      if (feedback.classList.contains('done')) {
+         feedback.classList.remove('done')
+         contacts.append(feedback);
+      }
+   }
+});
+
+
+//========
+
+const feedbackForm = document.forms.feedback;
+const nameInput = feedbackForm.nameInput;
+const phoneInput = feedbackForm.phoneInput;
+
+document.addEventListener('DOMContentLoaded', () => {
+
+   feedbackForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (nameInput.value !== '' && phoneInput.value !== '') {
+         const urlSendMessage = `https://api.telegram.org/bot5153040242:AAErjR1cQlgPjACBVduFJvVooI_BOyZzimg/sendMessage?chat_id=658673865&text= ${nameInput.value} ${phoneInput.value};`
+         fetch(urlSendMessage)
+         nameInput.value = '';
+         phoneInput.value = ''
+      }
+   })
+})

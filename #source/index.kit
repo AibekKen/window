@@ -133,7 +133,7 @@
             </section>
 
             <section id="steps" class="contacts">
-               <div class="container">
+               <div class="container contacts-container">
                   <h2 class="contacts__title section-title">
                      Сделать заказ
                   </h2>
@@ -197,16 +197,19 @@
 
                      </div>
                   </div>
+
                   <div id='feedback' class="contacts__feedback feedback">
                      <h2 class="feedback__title section-subtitle">Форма для обратной связи</h2>
-                     <form class="feedback__form">
+                     <form class="feedback__form" name='feedback'>
                         <div class="feedback__form_input">
-                           <input type="text" class="input" placeholder="Введите имя">
+                           <input tabindex="1" type="text" class="input" name="nameInput" placeholder="Введите имя"
+                              autocomplete="off">
                         </div>
                         <div class="feedback__form_input">
-                           <input type="tel" class="input" placeholder="Ваш номер телефона">
+                           <input tabindex="2" type="tel" class="input" name="phoneInput"
+                              placeholder="Ваш номер телефона" autocomplete="off">
                         </div>
-                        <button type="submit" class="feedback__form_btn">Отправить</button>
+                        <button tabindex="3" type="submit" class="feedback__form_btn">Отправить</button>
                      </form>
                   </div>
 

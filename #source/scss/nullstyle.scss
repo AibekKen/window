@@ -94,6 +94,7 @@ textarea {
    &.focus {
    }
    &.err {
+      box-shadow: 0 0 8px red;
    }
 }
 textarea.input {
