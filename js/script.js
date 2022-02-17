@@ -81,6 +81,7 @@ const whatsapp = document.querySelector('.whatsapp');
 const feedback = document.querySelector('.feedback');
 const steps = document.querySelector('.steps');
 const contacts = document.querySelector('.contacts-container')
+
 let screenWidth = window.screen.width;
 if (screenWidth <= 640) {
    if (!whatsapp.classList.contains("done")) {
@@ -94,32 +95,20 @@ if (screenWidth <= 977) {
       feedback.classList.add('done')
    }
 }
-
-
-
-const screenWidth = window.screen.width;
-if (screenWidth <= 640) {
-   if (!whatsapp.classList.contains("done")) {
-      whatsapp.classList.add('done')
-      menu.appendChild(whatsapp)
-   }
-}
-if (screenWidth > 640) {
-   if (whatsapp.classList.contains("done")) {
-      whatsapp.classList.remove('done')
-      headerRow.insertBefore(whatsapp, burger)
-   }
-}
-if (screenWidth <= 977) {
-   if (!feedback.classList.contains('done')) {
-      steps.append(feedback);
-      feedback.classList.add('done')
-   }
-}
-
-
 window.addEventListener('resize', () => {
    screenWidth = window.screen.width;
+   if (screenWidth <= 640) {
+      if (!whatsapp.classList.contains("done")) {
+         whatsapp.classList.add('done')
+         menu.appendChild(whatsapp)
+      }
+   }
+   if (screenWidth <= 977) {
+      if (!feedback.classList.contains('done')) {
+         steps.append(feedback);
+         feedback.classList.add('done')
+      }
+   }
    if (screenWidth > 640) {
       if (whatsapp.classList.contains("done")) {
          whatsapp.classList.remove('done')
