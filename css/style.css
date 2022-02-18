@@ -622,9 +622,9 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: calc((60 / 1200) * 100%);
-     -moz-column-gap: calc((60 / 1200) * 100%);
-          column-gap: calc((60 / 1200) * 100%);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .product__row_1 {
   margin-bottom: 30px;
@@ -635,7 +635,6 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 30px;
   }
   .product__column_image {
     -webkit-box-ordinal-group: 2;
@@ -662,6 +661,7 @@ a {
       -ms-flex-align: start;
           align-items: flex-start;
   width: 100%;
+  margin-bottom: 30px;
 }
 .product__column_text {
   background-color: rgba(111, 190, 151, 0.418);
@@ -749,9 +749,6 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-column-gap: calc((66 / 1200) * 100%);
-     -moz-column-gap: calc((66 / 1200) * 100%);
-          column-gap: calc((66 / 1200) * 100%);
 }
 @media (max-width: 980px) {
   .quality__body {
@@ -759,7 +756,6 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 20px;
   }
 }
 .quality__label {
@@ -775,15 +771,18 @@ a {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 46%;
           flex: 0 0 46%;
-  -webkit-column-gap: calc((20 / 552) * 100%);
-     -moz-column-gap: calc((20 / 552) * 100%);
-          column-gap: calc((20 / 552) * 100%);
+}
+@media (max-width: 980px) {
+  .quality__label {
+    margin-bottom: 20px;
+  }
 }
 .quality__brand {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 calc((196 / 552) * 100%);
           flex: 0 0 calc((196 / 552) * 100%);
   padding: 0 0 22% 0;
+  margin-right: calc((20 / 552) * 100%);
 }
 @media (max-width: 980px) {
   .quality__brand {
@@ -868,7 +867,6 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 30px;
 }
 
 .steps {
@@ -889,6 +887,9 @@ a {
             flex-direction: column;
   }
 }
+.steps__step {
+  margin: 0 0 30px 0;
+}
 @media (max-width: 980px) {
   .steps__step {
     -webkit-box-flex: 0;
@@ -906,7 +907,6 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 15px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -920,6 +920,7 @@ a {
   text-align: center;
   font-size: 2.1em;
   line-height: 60px;
+  margin-right: 15px;
 }
 .steps__number span {
   display: block;
@@ -945,7 +946,6 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 5px;
 }
 .steps__social-link {
   display: -webkit-box;
@@ -954,7 +954,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 6px;
+  margin: 0 0 5px 0;
 }
 .steps__list {
   position: relative;
@@ -1016,6 +1016,11 @@ a {
     margin-right: auto;
   }
 }
+@media (max-width: 977px) {
+  .feedback {
+    padding-top: 20px;
+  }
+}
 @media (max-width: 800px) {
   .feedback {
     -ms-flex-item-align: end;
@@ -1032,15 +1037,6 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 40px;
-}
-@media (max-width: 980px) {
-  .feedback__form {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
 }
 .feedback__form_input {
   width: 290px;
@@ -1051,6 +1047,9 @@ a {
     width: 260px;
     height: 60px;
   }
+}
+.feedback__form_input {
+  margin: 0 30px 0 0;
 }
 .feedback__form_input input::-webkit-input-placeholder {
   font-size: var(--fontsize3);
@@ -1094,6 +1093,17 @@ a {
 }
 .feedback__form_btn:hover {
   background: #5f1d58;
+}
+@media (max-width: 980px) {
+  .feedback__form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .feedback__form_input {
+    margin: 0 0 30px 0;
+  }
 }
 
 .footer {
